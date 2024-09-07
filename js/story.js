@@ -30,10 +30,11 @@ async function printStory(storyNum) {
 }
 
 function checkInput(input_data) {
-    var data = input_data.split(' ');
+    //var data = input_data.split(' ');
     // data[0] 是參賽者的卡號
     // 要接資料庫紀錄參賽隊伍的進度
-    switch (data[1]) {
+    //switch (data[1]) {
+    switch (input_data) {    
         case 'PTIKK42SQG':
             printStory(0);
             return true;
