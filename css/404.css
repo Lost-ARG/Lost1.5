@@ -17,6 +17,9 @@ h1{
     text-decoration: none;
     color: #666; 
     cursor: text;
+    font-style: italic;
+
+
 }
 .lost:hover {
     text-decoration: none; 
