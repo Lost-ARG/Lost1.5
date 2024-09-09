@@ -123,6 +123,8 @@ console.log('URL:', referrerURL);
 switch (referrerURL){
     case 'https://lost-arg.github.io/RE-Lost-1/':
         text.push('到上一頁尋找吧！');
+    default:
+        text.push('請聯繫開發者：@861hptpm')
 };
 
 async function main() {
