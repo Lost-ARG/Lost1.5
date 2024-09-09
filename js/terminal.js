@@ -117,7 +117,7 @@ var verInfo = `Welcome to WorldSimulation 2019.05 LTS (GNU/Linux 4.4.0-139-gener
 
 <br/><br/><br/> *** System restart required ***
 <br/> Last login: Sun Apr 21 01:52:42 2019 from 101.12.8.172 <br />`;
-let text = ['你好', '歡迎來到終端', '請輸入你的 Story Code', '沒有 Story Code 嗎？請聯絡開發者'];
+let text = ['你好', '歡迎來到終端', '請輸入你的 Story Code', '沒有 Story Code 嗎？請聯絡開發者：@861hptpm'];
 
 async function main() {
     $('.container').append(verInfo);
