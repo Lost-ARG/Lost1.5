@@ -8,7 +8,7 @@ var counter = 4;
 var current = 0;
 var gameLimit = 2;
 var getO = false;
-var storyCode = HS44APEBS8;
+var storyCode = 'HS44APEBS8';
 var nextUrl = undefined;
 var terminal = undefined;
 
@@ -73,7 +73,7 @@ function insertSymbol(element, symbol) {
         if(check) {
             alert('Wrong choice. But the browser is gradually become weird');
             sleep(5000);
-            location.replace('/' + terminal);
+            location.replace('https://lost-arg.github.io/RE-Lost-1/pages/terminal.html');
         } else {
             alert('Right choice. But make sure you got the weird thing in this page.')
             sleep(1000);

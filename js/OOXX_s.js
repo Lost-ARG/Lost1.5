@@ -37,7 +37,7 @@ var game = (() => {
             if(check) {
                 alert('Wrong choice. But the browser is gradually become weird');
                 sleep(5000);
-                location.replace('/' + terminal);
+                location.replace(''/' + terminal');
             } else {
                 alert('Right choice. But make sure you got the weird thing in this page.')
                 sleep(1000);
