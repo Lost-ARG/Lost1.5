@@ -1,4 +1,4 @@
-var storyArray = ['PTIKK42SQG', 'HS44APEBS8', 'APRVL69UB3', '7GF2M2XM2L', '36EF11SSOC', 'UC752H9W22', 'EM5NM91GA6'];
+let storyArray = ['PTIKK42SQG', 'HS44APEBS8', 'APRVL69UB3', '7GF2M2XM2L', '36EF11SSOC', 'UC752H9W22', 'EM5NM91GA6'];
 
 function pageScroll() {
     window.scrollBy(0,1);
@@ -18,13 +18,13 @@ async function printText(word) {
     $('.container .host').last().append('<span class="console"></span>');
     for (var i in word) {
         $('.container .host span').last().append(word[i]);
-        await sleep(30);
+        await sleep(50);
     }
 }
 function getStory(storyCode) {
     switch (storyCode) {
         case 'PTIKK42SQG':
-            return ['■■■ 坐在推理同好會的社辦，翻著筆電裡的照片，那是一些奇怪的身影，總是在深夜出沒於管院，從頭到腳一身黑，從沒看過其他顏色的衣服，並且在離開時一定扛著許多大型的黑色袋子和箱子。', '「肯定有問題。」■■■ 說，一邊看著照片中的神秘身影「我一定會揪出他們的真面目!」當初會加入推理同好會，便是由於自小對各種神秘的事件感到興趣，總是期待著自己有一天也能破解現實世界中的事件，而今在學校發現可疑的人，不免勾起 ■■■ 心中的偵探魂。'];
+            return ['■■■ 坐在推理同好會的社辦，翻著筆電裡的照片，那是一些奇怪的身影，總是在深夜出沒於管院，從頭到腳一身黑，從沒看過其他顏色的衣服，並且在離開時一定扛著許多大型的黑色袋子和箱子。', '「肯定有問題。」■■■ 說，一邊看著照片中的神秘身影：「我一定會揪出他們的真面目！」','當初會加入推理同好會，便是由於自小對各種神秘的事件感到興趣，總是期待著自己有一天也能破解現實世界中的事件，而今在學校發現可疑的人，不免勾起 ■■■ 心中的偵探魂。'];
         case 'HS44APEBS8':
             return ['「欸我們禮拜四要去聚餐，副社你訂一下位，晚上七點半，6 個人。」社長說。', '「1, 2, 3, 4, 5…」副社數著人數「社長，我們幹部只有 5 個人欸」', '「咦?我怎麼會數錯?哈哈哈哈」社長一邊大笑，心裡卻隱約覺得好像有什麼不對勁。', '「幹幹幹!忘記要開會!怎麼沒人提醒我啊!」■■■ 在崎下車站急匆匆的翻找著學生證「吼校車要來了阿我的學生證是死去哪裡啦!」', '■■■ 一邊翻找著學生證，一邊對著公車招手，沒想到，公車司機卻彷彿沒看到他一樣，直接左轉開走了。', '「靠邀喔!」■■■ 看著開走的校車忍不住罵出了聲「媽啦今天怎麼那麼衰」', '■■■ 拿出手機，想到社團群組跟大家說明自己缺席的原因，殊不知，所有社群軟體、通訊軟體完全沒有他的帳號紀錄，也無法登入，■■■ 不敢相信自己的眼睛，眨了兩下眼，再定睛一看，這回卻連 SIM 卡的訊號都消失了。', '「搞屁喔!」■■■ 把手機往書包裡一丟，開始往學校的方向走。'];
         case 'APRVL69UB3':
@@ -44,39 +44,42 @@ function getStory(storyCode) {
 
 async function printStory(storyNum) {
     printHost();
-    // 讀入故事並存進陣列
     var story = getStory(storyNum);
-    console.log(storyNum);
-    await printText('story[storyNum]');
-    printHost();
+    for (const element of story) {
+        console.log(element);
+        await printText(element); 
+        printHost(); 
+    }
 }
+
 
 function checkInput(input_data) {
     //var data = input_data.split(' ');
     // data[0] 是參賽者的卡號
     // 要接資料庫紀錄參賽隊伍的進度
     //switch (data[1]) {
-    switch (input_data) {    
+    switch (input_data) {   
+         
         case 'PTIKK42SQG':
-            printStory(0);
+            printStory(input_data);
             return true;
         case 'HS44APEBS8':
-            printStory(1);
+            printStory(input_data);
             return true;
         case 'APRVL69UB3':
-            printStory(2);
+            printStory(input_data);
             return true;
         case '7GF2M2XM2L':
-            printStory(3);
+            printStory(input_data);
             return true;
         case '36EF11SSOC':
-            printStory(4);
+            printStory(input_data);
             return true;
         case 'UC752H9W22':
-            printStory(5);
+            printStory(input_data);
             return true;
         case 'EM5NM91GA6':
-            printStory(6);
+            printStory(input_data);
             return true;
         default:
             return false;
@@ -84,18 +87,16 @@ function checkInput(input_data) {
 }
 
 async function user_input() {
-    
     printHost();
-    $('.container .host').last().append('<input type="text" id="id_and_code" name="id_and_code" class="col-4 col-md-6 col-lg-8 m-0 p-0">');
-    console.log('New input element added:', $('.id_and_code').last());
-    $('.id_and_code').last().focus();
-    $('.id_and_code').last().keypress(async function (event) {
-        console.log('Key pressed:', event.keyCode);
-        if (event.keyCode == 13) {
-            $(this).last().attr('disabled', 'disabled');
 
-            // 如果輸入錯誤
-            if (!checkInput($('.id_and_code').last().val())) {
+    $('.container .host').last().append('<input type="text" id="id_and_code" name="id_and_code" class="col-4 col-md-6 col-lg-8 m-0 p-0">');
+    $('#id_and_code').focus();
+    $('#id_and_code').keypress(async function (event) {
+        if (event.keyCode == 13) {
+            $('#id_and_code').prop('disabled', true);
+            Ch = await checkInput($('#id_and_code').val());
+            $('#id_and_code').removeAttr('id');
+            if (!Ch) {
                 printHost();
                 await printText('輸入錯誤, 請重新輸入');
                 user_input();
@@ -103,6 +104,8 @@ async function user_input() {
         }
     });
 }
+
+
 var verInfo = `Welcome to WorldSimulation 2019.05 LTS (GNU/Linux 4.4.0-139-generic x86_64)
 
 <br/><br/><br/> &nbsp;* Documentation:  https://help.WorldSimulation.com
@@ -114,7 +117,7 @@ var verInfo = `Welcome to WorldSimulation 2019.05 LTS (GNU/Linux 4.4.0-139-gener
 
 <br/><br/><br/> *** System restart required ***
 <br/> Last login: Sun Apr 21 01:52:42 2019 from 101.12.8.172 <br />`;
-let text = ['你好', '歡迎來到終端', '請輸入你的卡片辨識碼以及 Story Code', '如: 15601800 XC15D8E'];
+let text = ['你好', '歡迎來到終端', '請輸入你的 Story Code', '沒有 Story Code 嗎？請聯絡開發者'];
 
 async function main() {
     $('.container').append(verInfo);
