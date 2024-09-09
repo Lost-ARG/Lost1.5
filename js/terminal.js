@@ -120,10 +120,10 @@ var verInfo = `Welcome to WorldSimulation 2019.05 LTS (GNU/Linux 4.4.0-139-gener
 let text = ['你好', '歡迎來到終端', '請輸入你的 Story Code', '沒有 Story Code 嗎？'];
 let referrerURL = document.referrer;
 console.log('URL:', referrerURL);
-if (referrerURL.includes('https://lost-arg.github.io/RE-Lost-1')) {
-    // 如果前一個 URL 匹配，向陣列中添加新的字串
-    text.push('到上一頁尋找吧！');
-}
+switch (referrerURL){
+    case 'https://lost-arg.github.io/RE-Lost-1/':
+        text.push('到上一頁尋找吧！');
+};
 
 async function main() {
     $('.container').append(verInfo);
