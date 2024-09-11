@@ -122,10 +122,10 @@ let referrerURL = document.referrer;
 console.log('URL:', referrerURL);
 switch (referrerURL){
     case 'https://lost-arg.github.io/RE-Lost-1/':
-        text.push('到上一頁尋找吧！');
+        text.push(...['沒有 Story Code 嗎？','到上一頁尋找吧！']);
         break;
-    default:
-        text.push('請聯繫開發者：@861hptpm')
+    case 'https://lost-arg.github.io/RE-Lost-1/pages/OOXX.html':
+        text.push(...['沒有 Story Code 嗎？','你是忘記了，還是害怕想起來？']);
 };
 
 async function main() {
