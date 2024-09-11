@@ -77,7 +77,7 @@ function insertSymbol(element, symbol) {
         } else {
             alert('Right choice. But make sure you got the weird thing in this page.')
             sleep(1000);
-            location.replace('/' + nextUrl);
+            location.replace('https://lost-arg.github.io/RE-Lost-1/pages/terminal.html');
         }
     }
     turn++;

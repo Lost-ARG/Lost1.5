@@ -1,0 +1,14 @@
+body {
+    font-family: '微軟正黑體';
+}
+#codeImg {
+    width: 100%;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    opacity: 0.5;
+}
+
+a:hover{
+    color: rgba(225, 225, 225, 1);
+}
