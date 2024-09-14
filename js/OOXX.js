@@ -110,6 +110,7 @@ function restartGame() {
     $("#restart").removeClass("btn-green");
     $(".cell").addClass('cellHover');
     counter = 4;
+    current = 0;
 }
 
 /* Check if there's a winning combination in the grid (3 equal symbols in a row/column/diagonal) */
