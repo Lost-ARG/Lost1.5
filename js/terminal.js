@@ -187,6 +187,7 @@ switch (referrerURL){
         break;
     case 'https://lost-arg.github.io/RE-Lost-1/pages/OOXX.html':
         text.push(...['你該不會忘記了吧？']);
+        break;
 };
 
 async function main() {

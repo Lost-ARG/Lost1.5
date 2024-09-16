@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Huh, Connecting</title>
+</head>
+<body>
+    <div class="row col-12 p-5 d-flex justify-content-center">
+        <p class="col-12 text-center">
+            （即將進行系統連結，資料即將進行同步 Loading...）<br/>
+            <span class="text-white">曾經有個研究占星術的人</span>
+        </p>
+        <div class="col-12 col-md-6 d-flex justify-content-center">
+            <form class="col-12" id="mainForm">
+                <div class="form-group">
+                    <label for="cardCode">卡號</label>
+                    <input type="text" class="form-control" name="cardCode" id="cardCode" aria-describedby="textHelp" placeholder="請輸入卡號">
+                    <small id="textHelp" class="form-text text-muted">What's the card going on?</small>
+                </div>
+                <div class="form-group">
+                    <label for="password">欲連結之密碼</label>
+                    <input type="password" class="form-control" name="password" id="password" placeholder="請輸入密碼 ( 注意格式：有大小寫之分、沒有空格符 ) ">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+        <div class="fixed-bottom">
+            <form class="col-12 form-inline d-flex justify-content-space" id="subForm">
+                <input type="password" class="form-control" name="secretCode" id="secretCode" placeholder="Adj/v+N">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        // 監聽主要表單的提交事件
+        document.getElementById('mainForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // 阻止表單提交
+
+            // 獲取使用者輸入的卡號和密碼
+            var cardCode = document.getElementById('cardCode').value;
+            var password = document.getElementById('password').value;
+
+            // 驗證卡號必須是數字，且長度為5位數字
+            var cardCodeIsValid = /^[0-9]{5}$/.test(cardCode);
+
+            // 驗證密碼必須為 'password123' (範例密碼條件)
+            var cardCodeIsCorrect = cardCode == '94522';
+            var passwordIsValid = password === 'LeoAquarius';
+
+            if (!cardCodeIsValid) {
+                alert('卡號格式錯誤，請輸入5位數字的卡號');
+            } else {
+                // 如果卡號格式正確，再進行卡號和密碼的比對
+                if (cardCodeIsCorrect && passwordIsValid) {
+                    // 如果卡號和密碼都正確，跳轉到指定頁面
+                    window.location.href = './portal.html'; // 這裡換成你的指定頁面
+                } else if (!cardCodeIsCorrect && !passwordIsValid) {
+                    alert('卡號與密碼錯誤，請重新輸入');
+                } else if (!passwordIsValid && cardCodeIsCorrect) {
+                    alert('密碼錯誤，請重新輸入');
+                } else if (!cardCodeIsCorrect && passwordIsValid) {
+                    alert('卡號錯誤，請重新輸入');
+                }
+            }
+        });
+
+        // 監聽底部表單的提交事件
+        document.getElementById('subForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // 阻止表單提交
+
+            // 獲取密碼
+            var secretCode = document.getElementById('secretCode').value;
+
+            // 根據密碼顯示不同的提示
+            switch(secretCode) {
+                case 'SecretDog':
+                    alert('F/10');
+                    break;
+                case 'CutePangolin':
+                    alert('K/16');
+                    break;
+                case 'DeliciousTuna':
+                    alert('X/44');
+                    break;
+                case 'AmazingWorld':
+                    alert('N/26');
+                    break;
+                }
+        });
+            
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
