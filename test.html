@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>月餅節</title>
+    <link rel="stylesheet" href="css/test.css">
+</head>
+
+<body>
+    <div id="text">點擊螢幕吃月餅</div>
+
+    <script>
+        // 監聽整個頁面的點擊事件
+        document.body.addEventListener('click', function(event) {
+            // 獲取點擊的座標
+            var x = event.clientX;
+            var y = event.clientY;
+
+            // 設定要噴出的月餅數量
+            var numMooncakes = 25; // 可以根據需要更改數量
+
+            for (var i = 0; i < numMooncakes; i++) {
+                // 創建月餅表情符號的元素
+                var mooncake = document.createElement('div');
+                mooncake.className = 'mooncake';
+                mooncake.textContent = '🥮';
+
+                // 設定初始位置為鼠標點擊的中心
+                mooncake.style.left = x + 'px';
+                mooncake.style.top = y + 'px';
+
+                // 隨機方向和距離，讓月餅在不同的方向噴出
+                var angle = Math.random() * 2 * Math.PI; // 隨機角度
+                var distance = Math.random() * 300 + 50; // 隨機距離
+
+                // 設定動畫結束後的最終位置
+                mooncake.style.transform += ` translate(${Math.cos(angle) * distance}px, ${Math.sin(angle) * distance}px)`;
+
+                // 將月餅元素添加到網頁中
+                document.body.appendChild(mooncake);
+
+                // 一秒後移除月餅表情符號
+                setTimeout(function() {
+                    mooncake.remove();
+                }, 1000);
+            }
+        });
+    </script>
+
+
+</body>
