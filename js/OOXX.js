@@ -73,7 +73,7 @@ function insertSymbol(element, symbol) {
         if(check) {
             alert('Wrong choice. But the browser is gradually become weird');
             sleep(5000);
-            location.replace('https://lost-arg.github.io/RE-Lost-1/pages/terminal.html');
+            location.replace('https://lost-arg.github.io/RE-Lost-1/pages/LostNFound.html');
         } else {
             alert('Right choice. But make sure you got the weird thing in this page.')
             sleep(1000);
