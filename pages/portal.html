@@ -11,6 +11,10 @@
     body {
             background-color: white;
         }
+        #story {
+            cursor: default;
+            text-decoration: underline; /* 為 STORY 加上底線 */
+        }
     /* From Uiverse.io by Nawsome */ 
     .switch {
     display: block;
@@ -187,6 +191,7 @@
             } else {
                 document.body.style.backgroundColor = "black";
                 document.getElementById('story').style.cursor = "pointer";
+                document.getElementById('story').style.textdecoration='underline';
             }
         });
     </script>
