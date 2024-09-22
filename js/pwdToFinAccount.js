@@ -12,9 +12,8 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     var correctPassword = 'Y3.KIEP4.S';
 
     if (password === correctPassword) {
-        alert('Password is correct!'); // 密碼正確，彈出提示
-        window.location.href = './caesar.html'; // 跳轉到指定頁面
+        window.location.href = './finAccount.html';
     } else {
-        alert('Incorrect password, please try again.'); // 密碼錯誤
+        alert('Incorrect password, please try again.'); 
     }
 });
