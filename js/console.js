@@ -73,7 +73,6 @@ async function user_input() {
             if (!Ch) {
                 printHost();
                 await printText('輸入錯誤, 請重新輸入');
-                user_input();
             }
             await user_input();
         }
